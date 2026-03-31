@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Personal portfolio – showcasing projects, skills and experience." />
-    <title>Portfolio | About Me</title>
+    <meta name="description" content="Cristian Olivares — Consultor en tecnología con foco en IA, automatización y transformación digital. Ayudo a organizaciones a construir y adoptar soluciones que realmente generan impacto." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://colivares.cl/" />
+    <meta property="og:title" content="Cristian Olivares | Consultor en Tecnología" />
+    <meta property="og:description" content="Consultor en tecnología con foco en IA, automatización y transformación digital. Ayudo a organizaciones a construir y adoptar soluciones que realmente generan impacto." />
+    <meta property="og:locale" content="es_CL" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Cristian Olivares | Consultor en Tecnología" />
+    <meta name="twitter:description" content="Consultor en tecnología con foco en IA, automatización y transformación digital." />
+
+    <title>Cristian Olivares | Consultor en Tecnología</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -17,265 +30,250 @@
     <header class="navbar" id="navbar">
       <div class="container nav-container">
         <a href="#hero" class="logo">coliwares</a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
           <span class="hamburger"></span>
         </button>
-        <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="container hero-content">
-        <p class="hero-greeting">Hi, I'm</p>
-        <h1 class="hero-name">Your Name</h1>
-        <h2 class="hero-role">Full-Stack Developer</h2>
-        <p class="hero-description">
-          I build clean, performant and accessible web experiences.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-        </div>
-      </div>
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span>scroll</span>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-          <div class="about-image">
-            <div class="avatar-placeholder" aria-label="Profile photo">
-              <i class="fa-solid fa-user"></i>
-            </div>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="container hero-content">
+          <p class="hero-greeting">Hola, soy</p>
+          <h1 class="hero-name">Cristian Olivares</h1>
+          <h2 class="hero-role">Consultor en Tecnología</h2>
+          <p class="hero-description">
+            Ayudo a organizaciones a incorporar IA, automatización y nuevas formas de desarrollo para construir mejor, no solo más.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+            <a href="#contact" class="btn btn-outline">Conversemos</a>
           </div>
-          <div class="about-text">
-            <p>
-              Hello! I'm a passionate developer who loves crafting great user
-              experiences. I have experience building modern web applications and
-              enjoy solving challenging problems with clean, maintainable code.
-            </p>
-            <p>
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or enjoying a good cup of
-              coffee.
-            </p>
-            <a href="#" class="btn btn-primary" download>
-              <i class="fa-solid fa-download"></i> Download CV
+          <div class="hero-socials">
+            <a href="https://github.com/coliwares" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/colivaresaraya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://suno.com/@xikancito" target="_blank" rel="noopener noreferrer" aria-label="Suno">
+              <i class="fa-solid fa-music"></i>
             </a>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <span>scroll</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </section>
 
-    <!-- Skills Section -->
-    <section class="section section-alt" id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3><i class="fa-solid fa-code"></i> Frontend</h3>
-            <ul class="skill-list">
-              <li>HTML5 / CSS3</li>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
-              <li>TypeScript</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3><i class="fa-solid fa-server"></i> Backend</h3>
-            <ul class="skill-list">
-              <li>Node.js</li>
-              <li>Python</li>
-              <li>REST APIs</li>
-              <li>GraphQL</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3><i class="fa-solid fa-database"></i> Data &amp; Tools</h3>
-            <ul class="skill-list">
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>Git / GitHub</li>
-              <li>Docker</li>
-            </ul>
+      <!-- About Section -->
+      <section class="section" id="about">
+        <div class="container">
+          <h2 class="section-title">Sobre mí</h2>
+          <div class="about-grid">
+            <div class="about-image">
+              <div class="avatar-placeholder" aria-label="Foto de perfil">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+            <div class="about-text">
+              <p>
+                Soy consultor en tecnología enfocado en transformar la forma en que los equipos construyen y usan soluciones digitales. Trabajo en la intersección entre estrategia, ejecución y adopción real, ayudando a organizaciones a incorporar inteligencia artificial, automatización y nuevas formas de desarrollo como Citizen Development.
+              </p>
+              <p>
+                Me muevo cómodamente entre lo técnico y lo estratégico: puedo pasar de definir una iniciativa de transformación a construir soluciones, automatizar procesos o experimentar con nuevas herramientas. Creo en una tecnología que habilita, simplifica y escala capacidades en los equipos, y en que el verdadero desafío no es construir más, sino construir mejor.
+              </p>
+              <a href="#" class="btn btn-primary" download>
+                <i class="fa-solid fa-download"></i> Descargar CV
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <!-- Project Card 1 -->
-          <article class="project-card">
-            <div class="project-card-header">
-              <i class="fa-solid fa-folder-open project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="View source code" title="Source Code">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="#" aria-label="Open live demo" title="Live Demo">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
+      <!-- Skills Section -->
+      <section class="section section-alt" id="skills">
+        <div class="container">
+          <h2 class="section-title">Habilidades</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3><i class="fa-solid fa-brain"></i> IA &amp; Automatización</h3>
+              <ul class="skill-list">
+                <li>GitHub Copilot</li>
+                <li>LLMs &amp; Prompting</li>
+                <li>Python</li>
+                <li>Citizen Development</li>
+              </ul>
             </div>
-            <h3 class="project-title">Project One</h3>
-            <p class="project-description">
-              A brief description of this project, what it does and the problem
-              it solves. Replace with your actual project details.
-            </p>
-            <ul class="project-tags">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>PostgreSQL</li>
-            </ul>
-          </article>
-
-          <!-- Project Card 2 -->
-          <article class="project-card">
-            <div class="project-card-header">
-              <i class="fa-solid fa-folder-open project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="View source code" title="Source Code">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="#" aria-label="Open live demo" title="Live Demo">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
+            <div class="skill-category">
+              <h3><i class="fa-solid fa-code"></i> Frontend &amp; Web</h3>
+              <ul class="skill-list">
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>TypeScript</li>
+                <li>Diseño responsivo</li>
+              </ul>
             </div>
-            <h3 class="project-title">Project Two</h3>
-            <p class="project-description">
-              A brief description of this project, what it does and the problem
-              it solves. Replace with your actual project details.
-            </p>
-            <ul class="project-tags">
-              <li>Python</li>
-              <li>Django</li>
-              <li>Docker</li>
-            </ul>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="project-card">
-            <div class="project-card-header">
-              <i class="fa-solid fa-folder-open project-icon"></i>
-              <div class="project-links">
-                <a href="#" aria-label="View source code" title="Source Code">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="#" aria-label="Open live demo" title="Live Demo">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </div>
+            <div class="skill-category">
+              <h3><i class="fa-solid fa-server"></i> Backend &amp; DevOps</h3>
+              <ul class="skill-list">
+                <li>Java / SpringBoot</li>
+                <li>REST APIs</li>
+                <li>Docker</li>
+                <li>Git / GitHub</li>
+              </ul>
             </div>
-            <h3 class="project-title">Project Three</h3>
-            <p class="project-description">
-              A brief description of this project, what it does and the problem
-              it solves. Replace with your actual project details.
-            </p>
-            <ul class="project-tags">
-              <li>TypeScript</li>
-              <li>Next.js</li>
-              <li>Tailwind</li>
-            </ul>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section class="section section-alt" id="contact">
-      <div class="container contact-container">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="contact-intro">
-          Have a project in mind or just want to say hello? Feel free to reach
-          out – I'll get back to you as soon as possible.
-        </p>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your name"
-              required
-              autocomplete="name"
-            />
+      <!-- Projects Section -->
+      <section class="section" id="projects">
+        <div class="container">
+          <h2 class="section-title">Proyectos</h2>
+          <div class="projects-grid">
+            <!-- Vet Tracker -->
+            <article class="project-card">
+              <div class="project-card-header">
+                <i class="fa-solid fa-folder-open project-icon"></i>
+                <div class="project-links">
+                  <a href="https://github.com/coliwares/vet-tracker" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente" title="Código fuente">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">Vet Visits Tracker</h3>
+              <p class="project-description">
+                Registro de visitas veterinarias offline-first para tus perras. Incluye dashboard con métricas, historial con búsqueda, datos clínicos y backup en JSON.
+              </p>
+              <ul class="project-tags">
+                <li>TypeScript</li>
+                <li>LocalStorage</li>
+                <li>Offline-first</li>
+              </ul>
+            </article>
+
+            <!-- Herramientas de Facilitación -->
+            <article class="project-card">
+              <div class="project-card-header">
+                <i class="fa-solid fa-folder-open project-icon"></i>
+                <div class="project-links">
+                  <a href="https://github.com/coliwares/herramientas-facilitacion" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente" title="Código fuente">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">Herramientas de Facilitación</h3>
+              <p class="project-description">
+                Catálogo interactivo de herramientas digitales para facilitación de equipos. Organizado por categorías: diseño, colaboración, dinámicas y más.
+              </p>
+              <ul class="project-tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Facilitación</li>
+              </ul>
+            </article>
+
+            <!-- Web Services -->
+            <article class="project-card">
+              <div class="project-card-header">
+                <i class="fa-solid fa-folder-open project-icon"></i>
+                <div class="project-links">
+                  <a href="https://github.com/coliwares/web-services" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente" title="Código fuente">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">Web Services con Copilot</h3>
+              <p class="project-description">
+                Demo de desarrollo de API REST en Java con SpringBoot asistido por GitHub Copilot. Muestra el flujo de desarrollo con IA en el ciclo de vida real.
+              </p>
+              <ul class="project-tags">
+                <li>Java</li>
+                <li>SpringBoot</li>
+                <li>GitHub Copilot</li>
+              </ul>
+            </article>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="your@email.com"
-              required
-              autocomplete="email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Write your message here…"
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
-          </button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section section-alt" id="contact">
+        <div class="container contact-container">
+          <h2 class="section-title">Contacto</h2>
+          <p class="contact-intro">
+            ¿Tienes un proyecto en mente o simplemente quieres conversar? Escríbeme y te respondo a la brevedad.
+          </p>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Tu nombre"
+                required
+                autocomplete="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Escribe tu mensaje aquí…"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer-container">
-        <p>Designed &amp; built by <strong>Your Name</strong></p>
+        <p>Diseñado &amp; construido por <strong>Cristian Olivares</strong></p>
         <div class="footer-socials">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/coliwares" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/colivaresaraya" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
-            <i class="fa-brands fa-x-twitter"></i>
+          <a href="https://suno.com/@xikancito" target="_blank" rel="noopener noreferrer" aria-label="Suno">
+            <i class="fa-solid fa-music"></i>
           </a>
         </div>
         <p class="footer-credit">
-          <span id="year"></span> · All rights reserved
+          <span id="year"></span> · Todos los derechos reservados
         </p>
       </div>
     </footer>
