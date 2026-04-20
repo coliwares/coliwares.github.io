@@ -2,7 +2,17 @@
    Portfolio – main script
    ==================================================== */
 
-const NAVBAR_OFFSET = 80; // px offset for fixed header when calculating active section
+const NAVBAR_OFFSET = 80;
+
+/* ---------- Scroll progress bar ---------- */
+const scrollProgress = document.getElementById("scroll-progress");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = `${pct}%`;
+}, { passive: true });
 
 /* ---------- Navbar scroll effect ---------- */
 const navbar = document.getElementById("navbar");
@@ -62,11 +72,26 @@ const revealElements = document.querySelectorAll(
   ".section-title, .about-grid, .skill-category, .project-card, .contact-container > *"
 );
 
+// Stagger cards within grids
+[".skills-grid", ".projects-grid"].forEach((sel) => {
+  const grid = document.querySelector(sel);
+  if (grid) {
+    grid.querySelectorAll(".skill-category, .project-card").forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.12}s`;
+    });
+  }
+});
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+        // Clear stagger delay after reveal so hover transitions are instant
+        const delay = parseFloat(entry.target.style.transitionDelay || "0") * 1000;
+        setTimeout(() => {
+          entry.target.style.transitionDelay = "";
+        }, 600 + delay);
         revealObserver.unobserve(entry.target);
       }
     });
@@ -102,33 +127,64 @@ const formStatus = document.getElementById("form-status");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
+  const nameField = form.querySelector("#name");
+  const emailField = form.querySelector("#email");
+  const messageField = form.querySelector("#message");
 
-  // Simple client-side validation
-  if (!name || !email || !message) {
-    showStatus("Please fill in all fields.", "error");
-    return;
+  clearFieldError(nameField);
+  clearFieldError(emailField);
+  clearFieldError(messageField);
+
+  let hasError = false;
+
+  if (!nameField.value.trim()) {
+    showFieldError(nameField, "Por favor ingresa tu nombre.");
+    hasError = true;
+  }
+  if (!emailField.value.trim()) {
+    showFieldError(emailField, "Por favor ingresa tu email.");
+    hasError = true;
+  } else if (!isValidEmail(emailField.value.trim())) {
+    showFieldError(emailField, "Ingresa una dirección de email válida.");
+    hasError = true;
+  }
+  if (!messageField.value.trim()) {
+    showFieldError(messageField, "Por favor escribe tu mensaje.");
+    hasError = true;
   }
 
-  if (!isValidEmail(email)) {
-    showStatus("Please enter a valid email address.", "error");
-    return;
-  }
+  if (hasError) return;
 
-  // Simulate form submission (replace with actual backend / service)
   const submitBtn = form.querySelector("button[type='submit']");
   submitBtn.disabled = true;
-  submitBtn.textContent = "Sending…";
+  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando…';
 
   setTimeout(() => {
     form.reset();
     submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-    showStatus("Thanks! Your message has been sent. I'll be in touch soon. 🚀", "success");
+    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensaje';
+    showStatus("¡Listo! Tu mensaje fue enviado. Te responderé a la brevedad.", "success");
   }, 1200);
 });
+
+function showFieldError(field, message) {
+  const group = field.closest(".form-group");
+  group.classList.add("has-error");
+  let errorEl = group.querySelector(".error-msg");
+  if (!errorEl) {
+    errorEl = document.createElement("span");
+    errorEl.className = "error-msg";
+    group.appendChild(errorEl);
+  }
+  errorEl.textContent = message;
+}
+
+function clearFieldError(field) {
+  const group = field.closest(".form-group");
+  group.classList.remove("has-error");
+  const errorEl = group.querySelector(".error-msg");
+  if (errorEl) errorEl.textContent = "";
+}
 
 function showStatus(msg, type) {
   formStatus.textContent = msg;
@@ -136,7 +192,6 @@ function showStatus(msg, type) {
 }
 
 function isValidEmail(email) {
-  // Validates basic structure: local@domain.tld (no double dots, no leading dot in domain)
   return /^[^\s@]+@[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/.test(email);
 }
 
