@@ -10,7 +10,7 @@
   --color-primary: #38bdf8;
   --color-primary-dark: #0ea5e9;
   --color-text: #e2e8f0;
-  --color-text-muted: #94a3b8;
+  --color-text-muted: #a1b0c7;
   --color-heading: #f8fafc;
   --color-tag-bg: #0f172a;
 
@@ -687,5 +687,149 @@ ul {
   .hero-cta {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* =============================================
+   Skip Link
+   ============================================= */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  z-index: 500;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--color-heading);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   Scroll Progress Bar
+   ============================================= */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary), #7dd3fc);
+  z-index: 300;
+  width: 0%;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* =============================================
+   Global Focus Visible
+   ============================================= */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+}
+
+/* =============================================
+   Hero Enhancements
+   ============================================= */
+.hero {
+  position: relative;
+  background: radial-gradient(ellipse 90% 55% at 50% -5%, rgba(56, 189, 248, 0.11) 0%, transparent 70%);
+}
+
+.hero-name {
+  background: linear-gradient(135deg, var(--color-heading) 55%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============================================
+   Avatar Pulse Animation
+   ============================================= */
+.avatar-placeholder {
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0px rgba(56, 189, 248, 0.3); }
+  50%       { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+}
+
+/* =============================================
+   Skill List Decorative Bullets
+   ============================================= */
+.skill-list li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.skill-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.skill-category:hover {
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.1);
+}
+
+/* =============================================
+   Form Inline Error States
+   ============================================= */
+.form-group .error-msg {
+  font-size: 0.8rem;
+  color: #f87171;
+  display: none;
+  margin-top: 0.15rem;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.12);
+}
+
+.form-group.has-error .error-msg {
+  display: block;
+}
+
+/* =============================================
+   Mobile Touch Target Improvements
+   ============================================= */
+@media (max-width: 768px) {
+  .nav-menu a {
+    padding: 0.6rem 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-socials a,
+  .footer-socials a {
+    padding: 0.4rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
